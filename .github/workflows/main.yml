@@ -40,6 +40,10 @@ jobs:
       - name: Run tests
         run: echo "12345"
 
+      # Optional: Run tests
+      - name: Run tests
+        run: touch 123.txt
+
       # Optional: Deploy application
       # This step will vary based on your deployment method
       # - name: Deploy application
