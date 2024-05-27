@@ -1,0 +1,47 @@
+name: CI/CD Pipeline
+
+# Define the trigger
+on:
+  push:
+    branches:
+      - main
+
+# Define the job
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # # Check out the code
+      # - name: Checkout repository
+      #   uses: actions/checkout@v2
+
+      # # Set up Node.js environment
+      # - name: Set up Node.js
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: '16'
+
+      # # Install dependencies
+      # - name: Install dependencies
+      #   run: npm install -g sass cssnano uglify-js imagemin-cli
+
+      # Run the build script
+      - name: Run build script
+        run: |
+          chmod +x ./build.sh
+          ./build.sh
+
+      # Optional: Run tests
+      # - name: Run tests
+      #   run: npm test
+
+      # Optional: Run tests
+      - name: Run tests
+        run: echo "12345"
+
+      # Optional: Deploy application
+      # This step will vary based on your deployment method
+      # - name: Deploy application
+      #   run: ./deploy.sh
+      #   if: success()
